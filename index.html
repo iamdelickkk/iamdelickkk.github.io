@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@arrow-navigation/core/dist/dist.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <title>flydelick</title>
+</head>
+<body>
+    <div id="application">
+        <div class="StartUpBtn"></div>
+        <video src="/start.mp4" class="StartUpVideo"></video>
+        <div class="applicationBtns">
+            <div class="applicationBtn">
+                <div class="applicationBtnI">
+                    Enter
+                </div>
+                <div class="applicationBtnS">
+                    <span>Выбрать</span>
+                </div>
+            </div>
+            <div class="applicationBtn" id="BtNBa" style="display: none;">
+                <div class="applicationBtnI">
+                    Esc
+                </div>
+                <div class="applicationBtnS">
+                    <span>Назад</span>
+                </div>
+            </div>
+        </div>
+        <div class="J_Scr" id="WelcomeScreen" style="display: none;">
+            <div class="J_Scr_Title">
+                <span>Добро пожаловать!</span>
+            </div>
+            <div class="J_Scr_Inf">
+                <div class="J_Scr_Inf_Title">
+                    Добро пожаловать!
+                </div>
+                <div class="J_Scr_Inf_Container">
+                    <img src="/assets/imgs/hello.png" alt="" class="J_Scr_Inf_Container_IB">
+                    <p>
+                        Добро пожаловать на мой личный сайт! Здесь вы можете узнать обо мне, мои соц сети и другое.<br>Как вы можете видеть, данный сайт сделан в виде старого интерфейса Xbox 360.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="J_Scr" id="ProjectsScreen" style="display: none;">
+            <div class="J_Scr_Title">
+                <span>Мои проекты</span>
+            </div>
+            <div class="J_Scr_Dual">
+                <div class="J_Scr_Dual_F SCrJ_Group" id="group-1">
+                    <button class="Selectable" data-scrjdo="change_text_dual" data-text='<b>Жабблер (zhbblr.com)</b><br>Скорее всего один из моих успешных проектов на данный момент. Проект был выпущен в релиз 12 сентября 2023.<br>Жабблер - это социальная сеть с открытым исходным кодом, которая копирует функционал Tumblr.<br><b>Нажмите Enter чтобы зайти</b>' onclick="window.open('https://zhbblr.com', '_blank')" id="item-1-0">
+                        <span>
+                            Жабблер
+                        </span>
+                    </button>
+                    <button class="Selectable" onclick="" data-scrjdo="change_text_dual" data-text="<b>MeTube</b><br>MeTube - один из самых первых моих проектов. Проект был выпущен в релиз 25 июня 2022.<br>Представлял собой видеохостинг, который выглядел как старый YouTube (по типу BitView и др.).<br>Проект был закрыт 23 мая 2023." id="item-1-1">
+                        <span>
+                            MeTube
+                        </span>
+                    </button>
+                    <button class="Selectable" data-scrjdo="change_text_dual" data-text="<b>Zohan</b><br>Zohan - была самой простой и базовой социальной сетью. Проект был выпущен в релиз 2 июня 2023. Имела базовый функционал и дизайн по типу Metro в Windows 8.1.<br>Проект был закрыт 27 июля 2023." data-text="ZOhan" id="item-1-2">
+                        <span>
+                            Zohan
+                        </span>
+                    </button>
+                </div>
+                <div class="J_Scr_Dual_S">
+                    <span>
+                        ...
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="J_Scr" id="AboutMeScreen" style="display: none;">
+            <div class="J_Scr_Title">
+                <span>Обо мне</span>
+            </div>
+            <div class="J_Scr_Inf">
+                <div class="J_Scr_Inf_Title">
+                    Обо мне
+                </div>
+                <div class="J_Scr_Inf_Container">
+                    <img src="/assets/imgs/whoami.png" alt="" class="J_Scr_Inf_Container_IB">
+                    <p>
+                        Привет! Меня зовут Ярослав. Сейчас мне 16 лет.<br>
+                        Живу в Московской области.<br>
+                        Увлекаюсь веб-разработкой, старой техникой.<br>
+                        Также я создатель MeTube, Zohan и Жабблера.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="J_Scr" id="SocialMediaScreen" style="display: none;">
+            <div class="J_Scr_Title">
+                <span>Мои соц сети</span>
+            </div>
+            <div class="J_Scr_Dual">
+                <div class="J_Scr_Dual_F SCrJ_Group" id="group-3">
+                    <button class="Selectable" onclick="window.open('https://ovk.to/flydelick', '_blank');" id="item-3-0">
+                        <span>
+                            OpenVK
+                        </span>
+                    </button>
+                    <button class="Selectable" onclick="window.open('https://vepurovk.xyz/flydelick', '_blank');" id="item-3-1">
+                        <span>
+                            VepurOVK
+                        </span>
+                    </button>
+                    <button class="Selectable" onclick="window.open('https://mas.to/@flydelick', '_blank');" id="item-3-2">
+                        <span>
+                            Mastodon (mas.to)
+                        </span>
+                    </button>
+                    <button class="Selectable" onclick="window.open('https://flydelick.zhbblr.com', '_blank');" id="item-3-3">
+                        <span>
+                            Жабблер
+                        </span>
+                    </button>
+                    <button class="Selectable" onclick="window.open('https://tumblr.com/kosygin', '_blank');" id="item-3-4">
+                        <span>
+                            Tumblr
+                        </span>
+                    </button>
+                    <button class="Selectable" onclick="window.open('https://t.me/iamflydelick', '_blank');" id="item-3-5">
+                        <span>
+                            Telegram
+                        </span>
+                    </button>
+                </div>
+                <div class="J_Scr_Dual_S">
+                    <span>
+                        Здесь вы можете найти мои соц сети.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="J_Scr" id="AnotherLinksScreen" style="display: none;">
+            <div class="J_Scr_Title">
+                <span>Другие ссылки</span>
+            </div>
+            <div class="J_Scr_Dual">
+                <div class="J_Scr_Dual_F SCrJ_Group" id="group-4">
+                    <button class="Selectable" onclick="window.open('https://home.saursvepur.xyz', '_blank');" id="item-4-0">
+                        <span>
+                            saursvepur
+                        </span>
+                    </button>
+                    <button class="Selectable" onclick="window.open('https://veselcraft.ru', '_blank');" id="item-4-1">
+                        <span>
+                            Veselcraft
+                        </span>
+                    </button>
+                    <button class="Selectable" onclick="window.open('https://risha.furryporno.ru', '_blank');" id="item-4-2">
+                        <span>
+                            Риша (isamirivers)
+                        </span>
+                    </button>
+                    <button class="Selectable" onclick="window.open('https://kiffaknife.space', '_blank');" id="item-4-3">
+                        <span>
+                            kiffaknife
+                        </span>
+                    </button>
+                    <button class="Selectable" onclick="window.open('https://mryoshi.furryporno.ru', '_blank');" id="item-4-4">
+                        <span>
+                            mryoshiii (certificatedforklift)
+                        </span>
+                    </button>
+                    <button class="Selectable" onclick="window.open('https://lisikpng.com', '_blank');" id="item-4-5">
+                        <span>
+                            Lisikpng (TheFox)
+                        </span>
+                    </button>
+                    <button class="Selectable" onclick="window.open('https://myslivets.com/', '_blank');" id="item-4-6">
+                        <span>
+                            Myslivets
+                        </span>
+                    </button>
+                </div>
+                <div class="J_Scr_Dual_S">
+                    <span>
+                        Здесь находятся сайты моих знакомых и друзей =)
+                    </span><br>
+                    <span>
+                        А ещё вот (не кликабельные) кнопки.
+                    </span>
+                    <div>
+                        <a href="http://veselcraft.ru/"target="_black"> <img src="http://veselcraft.ru/images/vc.gif" alt="veselcraft"></a>
+                        <a href="http://home.saursvepur.xyz" target="_blank"><img src="http://home.saursvepur.xyz/img/saursvepur.gif" alt="Сайт Вепура."></a>
+                        <a href="https://kiffaknife.space" target="_black"><img src="https://www.kiffaknife.space/img/kiffaknife.gif" alt="kiffaknife"></a>
+                        <a href="https://myslivets.com" target="_blank"><img src="/assets/imgs/myslivets-banner.png" alt="myslivets"></a>
+                        <a href="https://risha.furryporno.ru" target="_blank"><img src="/assets/imgs/isami-banner.png" alt="Risha"></a>
+                        <a href="https://lisikpng.com/" target="_blank"><img src="http://www.kiffaknife.space/img/websbn.png" alt="thefox"></a>
+                        <a href="https://mryoshi.furryporno.ru/" target="_blank"><img src="https://mryoshi.furryporno.ru/img/banners/mryoshi.png" alt="mryoshi"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="MainContent" style="display: none;">
+            <!-- <div class="MainContentSections">
+                <div class="MainContentSection">
+                    <span>
+                        Другие ссылки
+                    </span>
+                </div>
+                <div class="MainContentSection">
+                    <span>
+                        Соц сети
+                    </span>
+                </div>
+                <div class="MainContentSection">
+                    <span>
+                        Главная
+                    </span>
+                </div>
+            </div> -->
+            <div class="MainContentI" id="group-0">
+                <button class="MainContentIElement" id="item-0-0" onclick="goToScreen($(this), '#WelcomeScreen');">
+                    <div class="MainContentIElementText">
+                        <span>Добро пожаловать!</span>
+                    </div>
+                    <div class="MainContentIElementIcon">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                    </div>
+                </button>
+                <button class="MainContentIElement" id="item-0-1" onclick="goToScreen($(this), '#ProjectsScreen');">
+                    <div class="MainContentIElementText">
+                        <span>Мои проекты</span>
+                    </div>
+                    <div class="MainContentIElementIcon">
+                        <i class="fa fa-folder-open" aria-hidden="true"></i>
+                    </div>
+                </button>
+                <button class="MainContentIElement" id="item-0-2"  onclick="goToScreen($(this), '#AboutMeScreen');">
+                    <div class="MainContentIElementText">
+                        <span>Обо мне</span>
+                    </div>
+                    <div class="MainContentIElementIcon">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    </div>
+                </button>
+                <button class="MainContentIElement" id="item-0-3"  onclick="goToScreen($(this), '#SocialMediaScreen');">
+                    <div class="MainContentIElementText">
+                        <span>Мои соц сети</span>
+                    </div>
+                    <div class="MainContentIElementIcon">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                    </div>
+                </button>
+                <button class="MainContentIElement" id="item-0-4"  onclick="window.open('https://github.com/iamdelickkk')">
+                    <div class="MainContentIElementText">
+                        <span>Мой GitHub</span>
+                    </div>
+                    <div class="MainContentIElementIcon">
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                    </div>
+                </button>
+                <button class="MainContentIElement" id="item-0-5"  onclick="goToScreen($(this), '#AnotherLinksScreen');">
+                    <div class="MainContentIElementText">
+                        <span>Другие ссылки</span>
+                    </div>
+                    <div class="MainContentIElementIcon">
+                        <i class="fa fa-external-link" aria-hidden="true"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
